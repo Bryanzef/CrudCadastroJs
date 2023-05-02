@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cadastro</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+    <script src="https://kit.fontawesome.com/3880d83a86.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <span>Cadastro</span>
+            <button onclick="openModal()" id="new">Adicionar</button>
+        </div>
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Idade</th>
+                        <th>Profissão</th>
+                        <th class="action">editar</th>
+                        <th class="action">excluir</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="modal-container">
+            <div class="modal">
+                <form action="">
+
+                    <input type="text" id="m-nome" placeholder="Nome" required />
+
+                    <input type="number" id="m-idade" placeholder="Idade" required />
+
+                    <input type="text" id="m-profissao" placeholder="Profissão" required />
+
+                    <button id="buttonSave">Salvar</button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div id="message">Usuario cadastrado
+
+    </div>
+
+
+    <script src=" ./assets/script.js"></script>
+</body>
+
+</html>
