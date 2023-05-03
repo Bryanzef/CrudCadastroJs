@@ -3,8 +3,8 @@ const tbody = document.querySelector("tbody");
 const sNome = document.querySelector("#m-nome");
 const sIdade = document.querySelector("#m-idade");
 const sProfissao = document.querySelector("#m-profissao");
-
 const btnSave = document.querySelector("#buttonSave");
+const message = document.getElementById("message");
 
 let items;
 let id;
@@ -12,7 +12,6 @@ let id;
 // Função para inserir um novo item na tabela
 function insertItem(item, index) {
   let tr = document.createElement("tr");
-
   tr.innerHTML = `
     <td>${item.nome}</td>
     <td>${item.idade}</td>
@@ -39,10 +38,27 @@ function deleteItem(index) {
   items.splice(index, 1);
   setItemsBD();
   loadItems();
-
-  const message = document.getElementById("message");
+  messageDelete();
+}
+function messageDelete() {
   message.innerHTML = " Usuário removido com sucesso";
   message.style = "color: rgb(255, 0, 0);";
+  message.style.display = "block";
+  setTimeout(() => {
+    message.style.display = "none";
+  }, 900);
+}
+function messageSucess() {
+  message.innerHTML = " Usuário adicionado com sucesso";
+  message.style = "color: rgb(0, 161, 0);";
+  message.style.display = "block";
+  setTimeout(() => {
+    message.style.display = "none";
+  }, 900);
+}
+function messsageEditItem() {
+  message.innerHTML = " Usuário editado com sucesso";
+  message.style = "color: rgb(0, 161, 0);";
   message.style.display = "block";
   setTimeout(() => {
     message.style.display = "none";
@@ -52,11 +68,11 @@ function deleteItem(index) {
 // Função para abrir o modal de cadastro
 function openModal(edit = false, index = 0) {
   modal.classList.add("active");
-
   modal.onclick = (e) => {
     if (e.target.className.indexOf("modal-container") !== -1) {
       modal.classList.remove("active");
     }
+    messsageEditItem();
   };
   // Se estiver editando um item existente, preenche os campos com os dados do item
   if (edit) {
@@ -70,7 +86,6 @@ function openModal(edit = false, index = 0) {
     id = undefined;
   }
 }
-
 btnSave.onclick = (e) => {
   if (sNome.value === "" || sIdade.value === "" || sProfissao.value === "") {
     return;
@@ -95,15 +110,7 @@ btnSave.onclick = (e) => {
   modal.classList.remove("active");
   loadItems();
   id = undefined;
-
-  // exibir a mensagem de sucesso
-  const message = document.getElementById("message");
-  message.innerHTML = " Usuário adicionado com sucesso";
-  message.style = "color: rgb(0, 161, 0);";
-  message.style.display = "block";
-  setTimeout(() => {
-    message.style.display = "none";
-  }, 900);
+  messageSucess();
 };
 
 function loadItems() {

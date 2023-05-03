@@ -19,7 +19,7 @@ button {
 }
 
 .container {
-  width: 90%;
+  width: 94%;
   height: 80%;
   border-radius: 10px;
   background: white;
@@ -94,8 +94,11 @@ thead tr th {
   text-align: start;
   margin-bottom: 50px;
 }
+th {
+  font-size: 0.9rem;
+}
 td {
-  font-size: 20px;
+  font-size: 1.1rem 
 }
 
 tbody tr {
@@ -111,39 +114,7 @@ tbody tr td.action {
   text-align: center;
 }
 
-@media (max-width: 700px) {
-  body {
-    font-size: 10px;
-  }
 
-  .header span {
-    font-size: 15px;
-  }
-
-  #new {
-    padding: 5px;
-    font-size: 10px;
-  }
-
-  thead tr th.action {
-    width: auto !important;
-  }
-
-  td button i {
-    font-size: 20px !important;
-  }
-
-  td button i:first-child {
-    margin-right: 0;
-  }
-
-  .modal {
-    width: 90% !important;
-  }
-  #message {
-    font-size: 0.8rem;
-  }
-}
 
 .modal-container {
   width: 100vw;
@@ -247,4 +218,114 @@ i:active {
   color: white;
   font-size: 1.2rem;
   display: none;
+}
+@media (max-width: 700px) {
+  body {
+    font-size: 10px;
+  }
+
+  .header span {
+    font-size: 15px;
+  }
+  span {
+    font-size: 1.2rem !important;
+  }
+
+  #new {
+    padding: 5px;
+    font-size: 10px;
+  }
+
+  thead tr th.action {
+    width: auto !important;
+  }
+
+  td{
+    font-size:1rem;
+  }
+  i {
+    font-size: 1.4rem !important;
+  
+  }
+
+  td button i:first-child {
+    margin-right: 0;
+  }
+
+  .modal {
+    width: 90% !important;
+  }
+  #message {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 545px ) {
+  th {
+    font-size: 0.9rem;
+  }
+  td {
+    font-size: 0.8rem !important;
+  }
+  i {
+    font-size: 1.2rem !important;
+  }
+  
+}
+@media (max-width:415px ) {
+  th {
+    font-size: 0.8rem ;
+  }
+  td {
+    font-size: 0.7rem !important;
+  }
+  i {
+    font-size: 1rem !important;
+  }
+  
+}
+@media (max-width: 331px) {
+  span {
+    font-size: 1rem !important;
+  }
+  th {
+    font-size: 0.7rem;
+    font-weight: 600;
+  }
+  td{
+    font-size: 0.7rem !important;
+  }
+  i{
+    font-size: 0.9rem !important;
+  }
+}
+@media (max-width: 280px) {
+  th {
+    font-size: 0.6rem ;
+    font-weight: 900;
+  }
+  td {
+    font-size: 0.6rem !important;
+  }
+  i {
+    font-size: 0.8rem !important;
+  }
+  
+}
+@media (max-width: 252px ) {
+  th {
+    font-size: 0.5rem;
+  }
+  td {
+    font-size: 0.5rem !important;
+  }
+  i {
+    font-size: 0.7rem !important; ;
+  }
+  
+}
+@media (max-width: 238px ) {
+  th {
+    font-size: 0.5rem;
+  }
+  
 }
