@@ -18,7 +18,7 @@ function insertItem(item, index) {
     <td>${item.profissao}</td>
 
     <td class="action">
-      <button onclick="editItem(${index})"><i class="fa-regular fa-pen-to-square"></i></button>
+      <button onclick="editItem(${index})" id="buttonItems"><i class="fa-regular fa-pen-to-square"></i></button>
     </td>
     <td class="action">
       <button onclick="deleteItem(${index})"><i class="fa-solid fa-trash"></i></button>
@@ -72,7 +72,6 @@ function openModal(edit = false, index = 0) {
     if (e.target.className.indexOf("modal-container") !== -1) {
       modal.classList.remove("active");
     }
-    messsageEditItem();
   };
   // Se estiver editando um item existente, preenche os campos com os dados do item
   if (edit) {
@@ -86,6 +85,7 @@ function openModal(edit = false, index = 0) {
     id = undefined;
   }
 }
+
 btnSave.onclick = (e) => {
   if (sNome.value === "" || sIdade.value === "" || sProfissao.value === "") {
     return;
@@ -97,20 +97,23 @@ btnSave.onclick = (e) => {
     items[id].nome = sNome.value;
     items[id].idade = sIdade.value;
     items[id].profissao = sProfissao.value;
+    messsageEditItem(); // adiciona a mensagem de sucesso
   } else {
     items.push({
       nome: sNome.value,
       idade: sIdade.value,
       profissao: sProfissao.value,
     });
+    messageSucess(); // mantém a mensagem de sucesso para adição de usuários
   }
 
   setItemsBD();
 
   modal.classList.remove("active");
+
   loadItems();
+
   id = undefined;
-  messageSucess();
 };
 
 function loadItems() {
